@@ -1,4 +1,3 @@
-
 #include <LiquidCrystal.h>
 #include "DHT.h"
 
@@ -14,8 +13,8 @@
 // Connect a 10K resistor from pin 2 (data) to pin 1 (power) of the sensor
 
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
-
 DHT dht(DHTPIN, DHTTYPE);
+
 
 void setup() {
   
@@ -29,7 +28,6 @@ void setup() {
   dht.begin();
   
 }
-
 
 
 void loop() {
@@ -61,26 +59,13 @@ void loop() {
     delay(150);
     
     lcd.clear();
-
-
-    
-lcd.setCursor(0, 0);
-
-lcd.print("Humid: ");
-
-lcd.print(h);
-
-lcd.print("%");
-
-lcd.setCursor(0, 1);
-
-lcd.print("Temp:  ");
-
-lcd.print(t);
-
-lcd.print("C");
-
-
-
+    lcd.setCursor(0, 0);
+    lcd.print("Humid: ");
+    lcd.print(h);
+    lcd.print("%");
+    lcd.setCursor(0, 1);
+    lcd.print("Temp:  ");
+    lcd.print(t);
+    lcd.print("C");
   }
 }
